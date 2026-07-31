@@ -3,9 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ceylin'e ❤️</title>
+
+<title>Ceylin'ime ❤️</title>
 
 <style>
+
 *{
 margin:0;
 padding:0;
@@ -14,111 +16,248 @@ font-family:Segoe UI,sans-serif;
 }
 
 body{
-background:linear-gradient(135deg,#ffb6d9,#ffd6e8,#ffeef7);
-overflow:hidden;
 height:100vh;
+overflow:hidden;
 display:flex;
 justify-content:center;
 align-items:center;
+background:linear-gradient(135deg,#ffd6e8,#ffc2dc,#ffeef5);
 }
+
+/* Kalpler */
 
 .heart{
 position:absolute;
-color:#ff3b7d;
-font-size:25px;
-animation:float 8s linear infinite;
+color:#ff3f83;
+animation:heart 8s linear infinite;
+pointer-events:none;
 }
 
-@keyframes float{
+@keyframes heart{
+
 0%{
-transform:translateY(100vh) scale(.5);
+transform:translateY(110vh) scale(.5);
 opacity:0;
 }
-20%{opacity:1;}
+
+20%{
+opacity:1;
+}
+
 100%{
 transform:translateY(-120vh) scale(1.5);
 opacity:0;
 }
+
 }
+
+/* Zarf */
 
 .envelope{
-width:220px;
-height:150px;
-background:#fff;
+
+width:260px;
+height:180px;
+background:white;
 position:relative;
+border-radius:10px;
+box-shadow:0 15px 35px rgba(0,0,0,.25);
 cursor:pointer;
-box-shadow:0 10px 30px rgba(0,0,0,.2);
 transition:.5s;
-border-radius:8px;
+
 }
 
-.envelope:before{
+.envelope::before{
+
 content:"";
+
 position:absolute;
+
 top:0;
+
 left:0;
-width:0;
-height:0;
-border-left:110px solid transparent;
-border-right:110px solid transparent;
-border-top:80px solid #ff8cb8;
+
+border-left:130px solid transparent;
+border-right:130px solid transparent;
+border-top:90px solid #ff87b6;
+
 transform-origin:top;
+
 transition:.8s;
+
 z-index:5;
+
 }
 
-.open:before{
+.open::before{
+
 transform:rotateX(180deg);
+
 }
+
+/* Açılan Mektup */
 
 .letter{
-position:absolute;
+
+position:fixed;
+
+left:50%;
+
+top:50%;
+
+transform:translate(-50%,-50%) scale(.7);
+
 width:90%;
-height:90%;
-background:white;
-left:5%;
-top:5%;
-padding:15px;
-border-radius:10px;
-text-align:center;
+
+max-width:450px;
+
+max-height:80vh;
+
 overflow:auto;
-transition:1s;
-transform:translateY(30px);
+
+padding:30px;
+
+background:white;
+
+border-radius:20px;
+
+box-shadow:0 20px 50px rgba(0,0,0,.35);
+
+text-align:center;
+
 opacity:0;
+
+transition:.6s;
+
+z-index:999;
+
 }
 
 .open .letter{
-transform:translateY(-120px);
+
 opacity:1;
+
+transform:translate(-50%,-50%) scale(1);
+
 }
 
 h1{
-color:#ff3b7d;
-margin-bottom:10px;
+
+color:#ff3f83;
+
+margin-bottom:20px;
+
 }
 
 .message{
-font-size:17px;
-line-height:1.7;
+
+font-size:18px;
+
+line-height:1.8;
+
 color:#444;
+
 }
 
+/* Alt Mesaj */
+
 .final{
+
 display:none;
-position:absolute;
-bottom:40px;
+
+position:fixed;
+
+left:50%;
+
+bottom:20px;
+
+transform:translateX(-50%);
+
+width:90%;
+
+max-width:430px;
+
+background:white;
+
+padding:18px;
+
+border-radius:20px;
+
 text-align:center;
-font-size:22px;
-color:#d6005c;
+
+font-size:18px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.25);
+
+color:#ff2c74;
+
 animation:pulse 1.5s infinite;
+
+z-index:1000;
+
 }
 
 @keyframes pulse{
+
 50%{
+
+transform:translateX(-50%) scale(1.05);
+
+}
+
+}
+
+/* Buton */
+
+button{
+
+margin-top:25px;
+
+padding:14px 30px;
+
+border:none;
+
+background:#ff3f83;
+
+color:white;
+
+font-size:18px;
+
+border-radius:40px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+button:hover{
+
 transform:scale(1.08);
+
+background:#ff1b68;
+
 }
+
+/* Mobil */
+
+@media(max-width:600px){
+
+.message{
+
+font-size:17px;
+
 }
+
+h1{
+
+font-size:28px;
+
+}
+
+}
+
 </style>
+
 </head>
 
 <body>
@@ -131,17 +270,39 @@ transform:scale(1.08);
 
 <div class="message">
 
-Prensesim... ❤️<br><br>
+Prensesim... ❤️
+
+<br><br>
 
 Sana anlatabileceğim bütün kelimeler bile seni ne kadar çok sevdiğimi anlatmaya yetmez.
 
+<br><br>
+
 Sen gülünce ben de gülüyorum.
+
+<br>
+
 Sen mutlu olunca ben de mutlu oluyorum.
 
+<br><br>
+
 İyi ki varsın...
+
+<br>
+
 İyi ki hayatımdasın...
 
+<br><br>
+
 ❤️ ❤️ ❤️
+
+<br><br>
+
+<button onclick="goster()">
+
+Sana Bir Şey Daha Söylemek İstiyorum ❤️
+
+</button>
 
 </div>
 
@@ -151,9 +312,11 @@ Sen mutlu olunca ben de mutlu oluyorum.
 
 <div class="final" id="final">
 
-💌 Bir de senden küçük bir ricam var...<br><br>
+💌 Bir de senden küçük bir ricam var...
 
-💕 Instagram'daki isteklerimi kabul edersen beni çok mutlu edersin. 💕
+<br><br>
+
+💕 Instagram'daki isteklerimi kabul edersen beni çok mutlu edersin.
 
 <br><br>
 
@@ -162,6 +325,8 @@ Sen mutlu olunca ben de mutlu oluyorum.
 </div>
 
 <script>
+
+/* Kalpler */
 
 for(let i=0;i<80;i++){
 
@@ -173,9 +338,9 @@ h.innerHTML="❤";
 
 h.style.left=Math.random()*100+"vw";
 
-h.style.animationDuration=(5+Math.random()*6)+"s";
+h.style.fontSize=(18+Math.random()*25)+"px";
 
-h.style.fontSize=(18+Math.random()*30)+"px";
+h.style.animationDuration=(5+Math.random()*6)+"s";
 
 h.style.animationDelay=Math.random()*5+"s";
 
@@ -185,15 +350,15 @@ document.body.appendChild(h);
 
 const env=document.getElementById("env");
 
-env.onclick=()=>{
+env.onclick=function(){
 
 env.classList.add("open");
 
-setTimeout(()=>{
+}
+
+function goster(){
 
 document.getElementById("final").style.display="block";
-
-},1500);
 
 }
 
