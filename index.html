@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ceylin'e ❤️</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI,sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#ffb6d9,#ffd6e8,#ffeef7);
+overflow:hidden;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.heart{
+position:absolute;
+color:#ff3b7d;
+font-size:25px;
+animation:float 8s linear infinite;
+}
+
+@keyframes float{
+0%{
+transform:translateY(100vh) scale(.5);
+opacity:0;
+}
+20%{opacity:1;}
+100%{
+transform:translateY(-120vh) scale(1.5);
+opacity:0;
+}
+}
+
+.envelope{
+width:220px;
+height:150px;
+background:#fff;
+position:relative;
+cursor:pointer;
+box-shadow:0 10px 30px rgba(0,0,0,.2);
+transition:.5s;
+border-radius:8px;
+}
+
+.envelope:before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:0;
+height:0;
+border-left:110px solid transparent;
+border-right:110px solid transparent;
+border-top:80px solid #ff8cb8;
+transform-origin:top;
+transition:.8s;
+z-index:5;
+}
+
+.open:before{
+transform:rotateX(180deg);
+}
+
+.letter{
+position:absolute;
+width:90%;
+height:90%;
+background:white;
+left:5%;
+top:5%;
+padding:15px;
+border-radius:10px;
+text-align:center;
+overflow:auto;
+transition:1s;
+transform:translateY(30px);
+opacity:0;
+}
+
+.open .letter{
+transform:translateY(-120px);
+opacity:1;
+}
+
+h1{
+color:#ff3b7d;
+margin-bottom:10px;
+}
+
+.message{
+font-size:17px;
+line-height:1.7;
+color:#444;
+}
+
+.final{
+display:none;
+position:absolute;
+bottom:40px;
+text-align:center;
+font-size:22px;
+color:#d6005c;
+animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+50%{
+transform:scale(1.08);
+}
+}
+</style>
+</head>
+
+<body>
+
+<div class="envelope" id="env">
+
+<div class="letter">
+
+<h1>💖 Ceylin'im 💖</h1>
+
+<div class="message">
+
+Prensesim... ❤️<br><br>
+
+Sana anlatabileceğim bütün kelimeler bile seni ne kadar çok sevdiğimi anlatmaya yetmez.
+
+Sen gülünce ben de gülüyorum.
+Sen mutlu olunca ben de mutlu oluyorum.
+
+İyi ki varsın...
+İyi ki hayatımdasın...
+
+❤️ ❤️ ❤️
+
+</div>
+
+</div>
+
+</div>
+
+<div class="final" id="final">
+
+💌 Bir de senden küçük bir ricam var...<br><br>
+
+💕 Instagram'daki isteklerimi kabul edersen beni çok mutlu edersin. 💕
+
+<br><br>
+
+❤️ Seni çok seviyorum Ceylin'im ❤️
+
+</div>
+
+<script>
+
+for(let i=0;i<80;i++){
+
+let h=document.createElement("div");
+
+h.className="heart";
+
+h.innerHTML="❤";
+
+h.style.left=Math.random()*100+"vw";
+
+h.style.animationDuration=(5+Math.random()*6)+"s";
+
+h.style.fontSize=(18+Math.random()*30)+"px";
+
+h.style.animationDelay=Math.random()*5+"s";
+
+document.body.appendChild(h);
+
+}
+
+const env=document.getElementById("env");
+
+env.onclick=()=>{
+
+env.classList.add("open");
+
+setTimeout(()=>{
+
+document.getElementById("final").style.display="block";
+
+},1500);
+
+}
+
+</script>
+
+</body>
+</html>
